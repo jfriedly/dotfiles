@@ -28,12 +28,12 @@ inoremap <C-k> <Up>
 inoremap <C-j> <Down>
 inoremap <C-l> <Right>
 
-" automatically closes all your opening stuff. '{' will put a new line in between
+" automatically closes all your opening stuff. '{' will put a new line in between. Notes: must use different keys for the second and third, that's why the convention is broken.  Also can't use <C-[> because that's equivalent to something else already (although I'm not sure what?)
 inoremap <C-(> ()<esc>i
 inoremap <C-]> []<esc>i
-inoremap <C-{> {<esc>o}<esc>O 
-inoremap <C-'> ''<esc>i
-inoremap <C-"> ""<esc>i
+inoremap { {<esc>o}<esc>O 
+"inoremap <C-'> ''<esc>i   "Commented out because the next one is the same w/o
+inoremap <C-'> ""<esc>i
 inoremap <C-<> <><esc>i
 
 " uses windows-like copying, pasting, and saving
