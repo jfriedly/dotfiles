@@ -29,12 +29,12 @@ inoremap <C-j> <Down>
 inoremap <C-l> <Right>
 
 " automatically closes all your opening stuff. '{' will put a new line in between
-inoremap ( ()<esc>i
-inoremap [ []<esc>i
-inoremap { {<esc>o}<esc>O 
-inoremap ' ''<esc>i
-inoremap " ""<esc>i
-inoremap < <><esc>i
+inoremap <C-(> ()<esc>i
+inoremap <C-]> []<esc>i
+inoremap <C-{> {<esc>o}<esc>O 
+inoremap <C-'> ''<esc>i
+inoremap <C-"> ""<esc>i
+inoremap <C-<> <><esc>i
 
 " uses windows-like copying, pasting, and saving
 inoremap <C-z> <esc>ui
