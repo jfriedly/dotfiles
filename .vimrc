@@ -22,15 +22,9 @@ set ai "auto indent
 set si "smart indent
 set wrap "wrap lines
 
-<<<<<<< HEAD
 "automatically close open tilde brackets (these ones can get annoying) except in
 "LaTeX files
 inoremap { {<esc>o}<esc>O
-au BufRead,BufNewFile *.tex inoremap { {
-=======
-"automatically close open tilde brackets (these ones can get annoying)
-inoremap { {<esc>o}<esc>O 
->>>>>>> 47fe93bcf39d93874a896d303863c589e6d76125
 
 " Ctrl-z only works in visual or normal mode regularly, so this makes it undo
 " in insert mode
@@ -41,11 +35,7 @@ inoremap <C-z> <esc>ui
 inoremap <C-v> <esc>pi
 
 " Ctrl-c only interrupts current searches, so we'll have it basically just
-<<<<<<< HEAD
 " copy when in visual mode
-=======
-" copy when in visual mode  
->>>>>>> 47fe93bcf39d93874a896d303863c589e6d76125
 vnoremap <C-c> y
 
 " my own escape key that isn't as far away as the actual one. Using both jk
