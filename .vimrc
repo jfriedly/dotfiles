@@ -22,9 +22,14 @@ set ai "auto indent
 set si "smart indent
 set wrap "wrap lines
 
-"automatically close open squigly brackets (these ones can get annoying) except "in LaTeX files
+"automatically close open tilde brackets (these ones can get annoying) except in
+"LaTeX files
 inoremap { {<esc>o}<esc>O
 au BufRead,BufNewFile *.tex inoremap { {
+
+"load c syntax highlighting when editing interactive c files (for robot
+"project)
+au BufRead,BufNewFile *.ic set filetype=c
 
 " Ctrl-z only works in visual or normal mode regularly, so this makes it undo
 " in insert mode
@@ -49,6 +54,7 @@ vnoremap kj <esc>
 " adds basic text editing and save in normal mode
 nmap <cr> i<cr><esc>
 nmap <Backspace> i<Backspace><Right><esc>
+"nmap <C-s> :w<cr>
 
 " no need to be compatible with vi
 set nocompatible
