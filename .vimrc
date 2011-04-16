@@ -27,6 +27,10 @@ set wrap "wrap lines
 inoremap { {<esc>o}<esc>O
 au BufRead,BufNewFile *.tex inoremap { {
 
+"tell vim to use LaTeX, not some other TeX; turn on spell checker too
+let g:tex_flavor='latex'
+au Filetype tex set spell
+
 "load c syntax highlighting when editing interactive c files (for robot
 "project)
 au BufRead,BufNewFile *.ic set filetype=c
@@ -55,6 +59,11 @@ vnoremap kj <esc>
 nmap <cr> i<cr><esc>
 nmap <Backspace> i<Backspace><Right><esc>
 "nmap <C-s> :w<cr>
+
+" overwrites t command to allow an insert single character command.
+" can safely overwrite t command because it basically does the same
+" thing as f, it just skips to the character before instead
+nnoremap t i<Space><esc>r
 
 " no need to be compatible with vi
 set nocompatible
