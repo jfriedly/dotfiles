@@ -23,7 +23,7 @@ set si "smart indent
 set wrap "wrap lines
 
 "automatically close open tilde brackets (these ones can get annoying) except in
-"LaTeX files
+"LaTeX files and Django templates
 inoremap { {<esc>o}<esc>O
 au BufRead,BufNewFile *.tex inoremap { {
 au BufRead,BufNewFile *.html inoremap { {
