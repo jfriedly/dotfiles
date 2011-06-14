@@ -26,6 +26,8 @@ set wrap "wrap lines
 "LaTeX files
 inoremap { {<esc>o}<esc>O
 au BufRead,BufNewFile *.tex inoremap { {
+au BufRead,BufNewFile *.html inoremap { {
+au BufRead,BufNewFile *.htm inoremap { {
 
 "tell vim to use LaTeX, not some other TeX; turn on spell checker too
 let g:tex_flavor='latex'
