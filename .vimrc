@@ -17,10 +17,12 @@ set incsearch
 set nobackup
 
 " smart tabbing
+set expandtab " use spaces instead of tabs
 set smarttab
 set ai "auto indent
 set si "smart indent
 set wrap "wrap lines
+au Filetype python retab! " automatically turn tabs into spaces in .py files
 
 "automatically close open tilde brackets (these ones can get annoying) except in
 "LaTeX files and Django templates
