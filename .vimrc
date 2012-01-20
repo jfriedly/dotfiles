@@ -26,10 +26,9 @@ au Filetype python retab! " automatically turn tabs into spaces in .py files
 
 "automatically close open tilde brackets (these ones can get annoying) except in
 "LaTeX files and Django templates
-inoremap { {<esc>o}<esc>O
-au BufRead,BufNewFile *.tex inoremap { {
-au BufRead,BufNewFile *.html inoremap { {
-au BufRead,BufNewFile *.htm inoremap { {
+au BufRead,BufNewFile *.c inoremap { {<esc>o}<esc>O
+au BufRead,BufNewFile *.cpp inoremap { {<esc>o}<esc>O
+au BufRead,BufNewFile *.js inoremap { {<esc>o}<esc>O
 
 "tell vim to use LaTeX, not some other TeX; turn on spell checker too
 let g:tex_flavor='latex'
