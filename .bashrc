@@ -98,10 +98,17 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# virtualenvwrapper stuff
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/git
+source /usr/local/bin/virtualenvwrapper.sh
+
 export PATH=$PATH:./
 
 export EDITOR=/usr/bin/vim
 
+# I can afford the extra few KB to have a huge history :)
+export HISTFILESIZE=10000
+
 #prints my ip address when I type ipconfig
 alias ipconfig="curl ifconfig.me"
-
