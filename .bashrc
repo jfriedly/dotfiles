@@ -103,12 +103,25 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/git
 source /usr/local/bin/virtualenvwrapper.sh
 
-export PATH=$PATH:./
+# jdk and jre stuff
+export JAVA_HOME=/usr/lib/jvm/java-6-sun
+export PATH=$PATH:$JAVA_HOME/bin
+alias csejava="/usr/lib/jvm/java-6-sun/bin/java"
+alias checkstyles="java -jar ~/Dropbox/cse-560/checkstyle-5.5/checkstyle-5.5-all.jar -c ~/Dropbox/cse-560/cse421Style.xml"
 
-export EDITOR=/usr/bin/vim
+# CVS stuff
+export CVSROOT=:pserver:friedly@stdlinux.cse.ohio-state.edu:/project/c560aa03/CVSREP
+
+export PATH=$PATH:/home/joel/.bin:./
+
+export EDITOR=`which vim`
+
+if [ -e ~/.bin ] && [ -e ~/.bin/pythonrc.py ]; then
+    export PYTHONSTARTUP=~/.bin/pythonrc.py
+fi
 
 # I can afford the extra few KB to have a huge history :)
 export HISTFILESIZE=10000
 
-#prints my ip address when I type ipconfig
-alias ipconfig="curl ifconfig.me"
+# prints my ip address when I type myip
+alias myip="curl ifconfig.me"

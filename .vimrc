@@ -30,38 +30,26 @@ au BufRead,BufNewFile *.c inoremap { {<esc>o}<esc>O
 au BufRead,BufNewFile *.cpp inoremap { {<esc>o}<esc>O
 au BufRead,BufNewFile *.js inoremap { {<esc>o}<esc>O
 
-"tell vim to use LaTeX, not some other TeX; turn on spell checker too
+"tell vim to use LaTeX, not some other TeX; turn on spell checker for LaTeX and ReST too
 let g:tex_flavor='latex'
 au Filetype tex set spell
+au Filetype rst set spell
 
-"load c syntax highlighting when editing interactive c files (for robot
-"project)
+"display line number and character position
+set ruler
+
+"load c syntax highlighting when editing interactive c files (for robot project)
 au BufRead,BufNewFile *.ic set filetype=c
-
-" Ctrl-z only works in visual or normal mode regularly, so this makes it undo
-" in insert mode
-inoremap <C-z> <esc>ui
-
-" Ctrl-v is the same as <esc>V and doesn't work on windows so I'd just as
-" rather have it paste
-inoremap <C-v> <esc>pi
-
-" Ctrl-c only interrupts current searches, so we'll have it basically just
-" copy when in visual mode
-vnoremap <C-c> y
 
 " my own escape key that isn't as far away as the actual one. Using both jk
 " and kj allows me to just jam the keyboard with the speed of one key but
 " still have my escape key on home row
 inoremap jk <esc>
 inoremap kj <esc>
-vnoremap jk <esc>
-vnoremap kj <esc>
 
 " adds basic text editing and save in normal mode
 nmap <cr> i<cr><esc>
 nmap <Backspace> i<Backspace><Right><esc>
-"nmap <C-s> :w<cr>
 
 " overwrites t command to allow an insert single character command.
 " can safely overwrite t command because it basically does the same
@@ -90,6 +78,3 @@ inoremap <F6> <ESC>:w<CR>:!git commit -a<CR>i
 " one-key git push
 nnoremap <F7> :!git push origin master<CR>
 inoremap <F7> <ESC>:!git push origin master<CR>i
-
-" lets me skip to newline even if there's stuff after the cursor
-inoremap <C-o> <esc>o
