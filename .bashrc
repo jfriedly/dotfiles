@@ -125,3 +125,8 @@ export HISTFILESIZE=10000
 
 # prints my ip address when I type myip
 alias myip="curl ifconfig.me"
+
+# annoyed at ssh constantly asking for your ssh password?
+# use the following two commands and it will cache the pw:
+#eval `ssh-agent`
+#ssh-add
