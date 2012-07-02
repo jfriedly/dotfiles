@@ -101,7 +101,7 @@ fi
 # virtualenvwrapper stuff
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/git
-source /usr/local/bin/virtualenvwrapper.sh
+#source /usr/local/bin/virtualenvwrapper.sh
 
 # jdk and jre stuff
 export JAVA_HOME=/usr/lib/jvm/java-6-sun
