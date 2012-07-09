@@ -1,0 +1,26 @@
+Host osc
+    Hostname opensource.osu.edu
+    User jfriedly
+
+Host stdsun
+    Hostname stdsun.cse.ohio-state.edu
+    User friedly
+
+Host stdlinux
+    Hostname stdlinux.cse.ohio-state.edu
+    User friedly
+
+Host lab1
+    Hostname labvm01.mview.int.nebula.com
+
+Host lab2
+    Hostname labvm02.mview.int.nebula.com
+
+Host lab3
+    Hostname labvm03.mview.int.nebula.com
+
+Host lab4
+    Hostname labvm04.mview.int.nebula.com
+
+Host lab5
+    Hostname labvm05.mview.int.nebula.com
