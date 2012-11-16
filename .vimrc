@@ -16,13 +16,12 @@ set incsearch
 " turn off backups
 set nobackup
 
-" smart tabbing
 set expandtab " use spaces instead of tabs
-set smarttab
-set ai "auto indent
-set si "smart indent
+set autoindent
+set smartindent
 set wrap "wrap lines
 au Filetype python retab! " automatically turn tabs into spaces in .py files
+au Filetype python set makeprg="pep8 && pylint -E"
 
 "automatically close open tilde brackets (these ones can get annoying) except in
 "LaTeX files and Django templates
@@ -34,6 +33,7 @@ au BufRead,BufNewFile *.js inoremap { {<esc>o}<esc>O
 let g:tex_flavor='latex'
 au Filetype tex set spell
 au Filetype rst set spell
+au Filetype rst nnoremap @a i:rl:`$$`<esc>hi
 
 "display line number and character position
 set ruler
@@ -71,6 +71,9 @@ set wildmenu
 
 " know what type of file I'm editing
 filetype plugin on
+" paradigm recommended this one, but it makes restructured text unbearable.
+" Removed.
+" filetype indent on
 
 " one-key git commit
 nnoremap <F6> :w<CR>:!git commit -a<CR>
@@ -78,3 +81,10 @@ inoremap <F6> <ESC>:w<CR>:!git commit -a<CR>i
 " one-key git push
 nnoremap <F7> :!git push origin master<CR>
 inoremap <F7> <ESC>:!git push origin master<CR>i
+
+" if I'm in the command line window, make escape able to close it
+au CmdwinEnter * nnoremap <buffer> <ESC> :q<cr>
+
+" mark trailing spaces with this ugly character to make them hard to miss
+set list
+set listchars=trail:·

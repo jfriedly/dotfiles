@@ -40,12 +40,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+# We have color support; assume it's compliant with Ecma-48
+# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+# a case would tend to support setf rather than setaf.)
+color_prompt=yes
     else
-	color_prompt=
+color_prompt=
     fi
 fi
 
@@ -101,7 +101,7 @@ fi
 # virtualenvwrapper stuff
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/git
-#source /usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper.sh
 
 # jdk and jre stuff
 export JAVA_HOME=/usr/lib/jvm/java-6-sun
@@ -123,10 +123,32 @@ fi
 # I can afford the extra few KB to have a huge history :)
 export HISTFILESIZE=10000
 
+# Because grep should be pretty.
+alias grep="grep --color"
+
 # prints my ip address when I type myip
 alias myip="curl ifconfig.me"
 
-# annoyed at ssh constantly asking for your ssh password?
-# use the following two commands and it will cache the pw:
-#eval `ssh-agent`
-#ssh-add
+# dofus
+alias dofus="~/ankama/Dofus/share/UpLauncher &"
+
+# terminal youtube stuff:
+alias ytsp="ytps"
+
+# hipchat
+alias hipchat="/opt/HipChat/bin/HipChat"
+
+# minecraft
+alias minecraft="java -jar $HOME/games/minecraft.jar"
+# other versions of minecraft
+alias minecraft1.3.2="unlink $HOME/.minecraft && ln -s $HOME/.minecraft1.3.2 $HOME/.minecraft && java -jar $HOME/games/minecraft.jar"
+alias minecraft1.4.2="unlink $HOME/.minecraft && ln -s $HOME/.minecraft1.4.2 $HOME/.minecraft && java -jar $HOME/games/minecraft.jar"
+alias minecraft1.4.4="unlink $HOME/.minecraft && ln -s $HOME/.minecraft1.4.4 $HOME/.minecraft && java -jar $HOME/games/minecraft.jar"
+
+
+# I go to my classes folder in Dropbox all the time
+alias cl="cd /home/joel/Dropbox/classes/"
+
+# funny
+alias fuck="echo 'Fuck you!'"
+alias FUCK="echo 'Fuck you!'"
