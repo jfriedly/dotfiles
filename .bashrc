@@ -99,9 +99,12 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # virtualenvwrapper stuff
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/git
-source /usr/local/bin/virtualenvwrapper.sh
+if [ -e /usr/local/bin/virtualenvwrapper.sh ]
+then
+    export WORKON_HOME=$HOME/.virtualenvs
+    export PROJECT_HOME=$HOME/git
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
 
 # jdk and jre stuff
 export JAVA_HOME=/usr/lib/jvm/java-6-sun
