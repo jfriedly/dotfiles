@@ -69,6 +69,18 @@ Host nebstack7
 Host nebstack8
     Hostname nebstack008.mview.int.nebula.com
 
+Host nebstack9
+    Hostname nebstack009.mview.int.nebula.com
+
+Host nebstack10
+    Hostname nebstack010.mview.int.nebula.com
+
+Host nebstack11
+    Hostname nebstack011.mview.int.nebula.com
+
+Host nebstack12
+    Hostname nebstack012.mview.int.nebula.com
+
 Host lab1ip
     Hostname 10.128.11.152
 
