@@ -1,1 +1,8 @@
-This repo will host my config files for things like vim, bash, and such.  It's available for anyone to use and I think most people would find it very useful.  Everything should be documented in-file pretty well, but you can email me at joelfriedly@gmail.com if you have any questions.
+About
+=====
+
+This repo will host my config files for things like vim, bash, ssh, and such.
+It's on GitHub so that I can easily keep track fo what I did before and get these files onto new machines that I use.
+
+If you'd like to use it yourself, clone the repo and run setup.sh.
+That will automatically move in my id_rsa.pub and my authorized_keys, so you'll want to wipe those.
