@@ -4,10 +4,20 @@ git config --global user.email "joelfriedly@gmail.com"
 git config --global github.user jfriedly
 git config --global core.editor vim
 git config --global color.ui always
+
 echo "Copying over .vimrc"
 cp .vimrc $HOME/.
+
 echo "Copying over .bashrc"
 cp .bashrc $HOME/.
+
+echo "Creating .bin, coying over unlock-ssh-keys.sh"
+if [ ! -e $HOME/.bin ]
+then
+    mkdir $HOME/.bin
+fi
+cp bin/unlock-ssh-keys.sh $HOME/.bin/.
+
 echo "Configuring ssh, don't forget to copy over id_rsa"
 if [ ! -e $HOME/.ssh ]
 then
