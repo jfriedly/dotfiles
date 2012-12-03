@@ -154,3 +154,6 @@ alias cl="cd $HOME/Dropbox/classes/"
 
 # Because network manager's GUI is constantly breaking on Ubuntu
 alias nebura="nmcli con up id nebula-1"
+
+# Cache my ssh key
+alias unlockssh="source $HOME/.bin/unlock-ssh-key.sh"
