@@ -16,7 +16,7 @@ if [ ! -e $HOME/.bin ]
 then
     mkdir $HOME/.bin
 fi
-cp bin/unlock-ssh-keys.sh $HOME/.bin/.
+cp bin/unlock-ssh-key.sh $HOME/.bin/.
 
 echo "Configuring ssh, don't forget to copy over id_rsa"
 if [ ! -e $HOME/.ssh ]

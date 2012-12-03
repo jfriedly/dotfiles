@@ -99,9 +99,12 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # virtualenvwrapper stuff
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/git
-source /usr/local/bin/virtualenvwrapper.sh
+if [ -e /usr/local/bin/virtualenvwrapper.sh ]
+then
+    export WORKON_HOME=$HOME/.virtualenvs
+    export PROJECT_HOME=$HOME/git
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
 
 # jdk and jre stuff
 export JAVA_HOME=/usr/lib/jvm/java-6-sun
@@ -112,12 +115,12 @@ alias checkstyles="java -jar ~/Dropbox/cse-560/checkstyle-5.5/checkstyle-5.5-all
 # CVS stuff
 export CVSROOT=:pserver:friedly@stdlinux.cse.ohio-state.edu:/project/c560aa03/CVSREP
 
-export PATH=$PATH:/home/joel/.bin:./
+export PATH=$PATH:$HOME/.bin:./
 
 export EDITOR=`which vim`
 
-if [ -e ~/.bin ] && [ -e ~/.bin/pythonrc.py ]; then
-    export PYTHONSTARTUP=~/.bin/pythonrc.py
+if [ -e $HOME/.bin ] && [ -e HOME/.bin/pythonrc.py ]; then
+    export PYTHONSTARTUP=$HOME/.bin/pythonrc.py
 fi
 
 # I can afford the extra few KB to have a huge history :)
@@ -130,7 +133,7 @@ alias grep="grep --color"
 alias myip="curl ifconfig.me"
 
 # dofus
-alias dofus="~/ankama/Dofus/share/UpLauncher &"
+alias dofus="$HOME/ankama/Dofus/share/UpLauncher &"
 
 # terminal youtube stuff:
 alias ytsp="ytps"
@@ -147,8 +150,4 @@ alias minecraft1.4.4="unlink $HOME/.minecraft && ln -s $HOME/.minecraft1.4.4 $HO
 
 
 # I go to my classes folder in Dropbox all the time
-alias cl="cd /home/joel/Dropbox/classes/"
-
-# funny
-alias fuck="echo 'Fuck you!'"
-alias FUCK="echo 'Fuck you!'"
+alias cl="cd $HOME/Dropbox/classes/"
