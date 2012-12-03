@@ -151,3 +151,6 @@ alias minecraft1.4.4="unlink $HOME/.minecraft && ln -s $HOME/.minecraft1.4.4 $HO
 
 # I go to my classes folder in Dropbox all the time
 alias cl="cd $HOME/Dropbox/classes/"
+
+# Because network manager's GUI is constantly breaking on Ubuntu
+alias nebura="nmcli con up id nebula-1"
