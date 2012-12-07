@@ -84,6 +84,9 @@ Host nebstack12
 Host lab1ip
     Hostname 10.128.11.152
 
+Host aws
+    Hostname 54.243.96.60
+
 Host vm
     Hostname 192.168.122.51
 
