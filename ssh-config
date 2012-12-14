@@ -6,80 +6,11 @@ Host stdlinux
     Hostname stdlinux.cse.ohio-state.edu
     User friedly
 
-Host lab1
-    Hostname labvm01.mview.int.nebula.com
+Host labvm*
+    Hostname %h.mview.int.nebula.com
 
-Host lab2
-    Hostname labvm02.mview.int.nebula.com
-
-Host lab3
-    Hostname labvm03.mview.int.nebula.com
-
-Host lab4
-    Hostname labvm04.mview.int.nebula.com
-
-Host lab5
-    Hostname labvm05.mview.int.nebula.com
-
-Host lab6
-    Hostname labvm06.mview.int.nebula.com
-
-Host lab7
-    Hostname labvm07.mview.int.nebula.com
-
-Host lab8
-    Hostname labvm08.mview.int.nebula.com
-
-Host lab9
-    Hostname labvm09.mview.int.nebula.com
-
-Host lab10
-    Hostname labvm10.mview.int.nebula.com
-
-Host lab11
-    Hostname labvm11.mview.int.nebula.com
-
-Host lab12
-    Hostname labvm12.mview.int.nebula.com
-
-Host lab13
-    Hostname labvm13.mview.int.nebula.com
-
-Host nebstack1
-    Hostname nebstack001.mview.int.nebula.com
-
-Host nebstack2
-    Hostname nebstack002.mview.int.nebula.com
-
-Host nebstack3
-    Hostname nebstack003.mview.int.nebula.com
-
-Host nebstack4
-    Hostname nebstack004.mview.int.nebula.com
-
-Host nebstack5
-    Hostname nebstack005.mview.int.nebula.com
-
-Host nebstack6
-    Hostname nebstack006.mview.int.nebula.com
-
-Host nebstack7
-    Hostname nebstack007.mview.int.nebula.com
-
-Host nebstack8
-    Hostname nebstack008.mview.int.nebula.com
-
-Host nebstack9
-    Hostname nebstack009.mview.int.nebula.com
-
-Host nebstack10
-    Hostname nebstack010.mview.int.nebula.com
-
-Host nebstack11
-    Hostname nebstack011.mview.int.nebula.com
-
-Host nebstack12
-    Hostname nebstack012.mview.int.nebula.com
+Host nebstack*
+    Hostname %h.mview.int.nebula.com
 
 Host lab1ip
     Hostname 10.128.11.152
