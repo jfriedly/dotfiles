@@ -147,6 +147,8 @@ alias minecraft="java -jar $HOME/games/minecraft.jar"
 alias minecraft1.3.2="unlink $HOME/.minecraft && ln -s $HOME/.minecraft1.3.2 $HOME/.minecraft && java -jar $HOME/games/minecraft.jar"
 alias minecraft1.4.2="unlink $HOME/.minecraft && ln -s $HOME/.minecraft1.4.2 $HOME/.minecraft && java -jar $HOME/games/minecraft.jar"
 alias minecraft1.4.4="unlink $HOME/.minecraft && ln -s $HOME/.minecraft1.4.4 $HOME/.minecraft && java -jar $HOME/games/minecraft.jar"
+alias minecraft1.4.5="unlink $HOME/.minecraft && ln -s $HOME/.minecraft1.4.5 $HOME/.minecraft && java -jar $HOME/games/minecraft.jar"
+alias minecraft1.4.6="unlink $HOME/.minecraft && ln -s $HOME/.minecraft1.4.6 $HOME/.minecraft && java -jar $HOME/games/minecraft.jar"
 
 
 # I go to my classes folder in Dropbox all the time
