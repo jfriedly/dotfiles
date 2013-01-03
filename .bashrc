@@ -156,3 +156,6 @@ alias cl="cd $HOME/Dropbox/classes/"
 
 # Cache my ssh key
 alias unlockssh="source $HOME/.bin/unlock-ssh-key.sh"
+
+# pipe stdout to this alias and it will put the stdout in a pastebin at ix.io
+alias pastebin="curl -n -F '1=<-' ix.io"
