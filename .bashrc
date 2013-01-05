@@ -159,3 +159,6 @@ alias unlockssh="source $HOME/.bin/unlock-ssh-key.sh"
 
 # pipe stdout to this alias and it will put the stdout in a pastebin at ix.io
 alias pastebin="curl -n -F '1=<-' ix.io"
+
+# pipe stout to this alias and it will text me the info
+alias txtme="gcsms.py send"

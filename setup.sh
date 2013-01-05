@@ -11,12 +11,16 @@ cp .vimrc $HOME/.
 echo "Copying over .bashrc"
 cp .bashrc $HOME/.
 
-echo "Creating .bin, coying over unlock-ssh-keys.sh"
+echo "Copying over .gcsms"
+cp .gcsms $HOME/.
+
+echo "Creating .bin, coying over unlock-ssh-keys.sh and gcsms"
 if [ ! -e $HOME/.bin ]
 then
     mkdir $HOME/.bin
 fi
 cp bin/unlock-ssh-key.sh $HOME/.bin/.
+cp bin/gcsms.py $HOME/.bin/.
 
 echo "Configuring ssh, don't forget to copy over id_rsa"
 if [ ! -e $HOME/.ssh ]
