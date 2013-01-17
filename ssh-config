@@ -23,3 +23,6 @@ Host vm
 
 Host bedrock
     Hostname 192.168.122.218
+
+Host osumc
+    Hostname 54.235.244.4
