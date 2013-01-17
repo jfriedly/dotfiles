@@ -99,8 +99,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # virtualenvwrapper stuff
-if [ -e /usr/local/bin/virtualenvwrapper.sh ]
-then
+if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
     export WORKON_HOME=$HOME/.virtualenvs
     export PROJECT_HOME=$HOME/git
     source /usr/local/bin/virtualenvwrapper.sh
