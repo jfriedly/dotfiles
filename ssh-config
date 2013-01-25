@@ -8,21 +8,28 @@ Host stdlinux
 
 Host labvm*
     Hostname %h.mview.int.nebula.com
+    User joel
 
 Host nebstack*
     Hostname %h.mview.int.nebula.com
+    User joel
 
 Host lab1ip
     Hostname 10.128.11.152
+    User joel
 
 Host aws
     Hostname 54.243.96.60
+    User joel
 
 Host vm
     Hostname 192.168.122.51
+    User joel
 
 Host bedrock
     Hostname 192.168.122.218
+    User joel
 
 Host osumc
     Hostname 54.235.244.4
+    User joel
