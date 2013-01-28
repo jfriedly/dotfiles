@@ -4,6 +4,7 @@ git config --global user.email "joelfriedly@gmail.com"
 git config --global github.user jfriedly
 git config --global core.editor vim
 git config --global color.ui always
+git remote add jfriedly git@github.com:jfriedly/dotfiles.git
 
 echo "Copying over .vimrc"
 cp .vimrc $HOME/.
