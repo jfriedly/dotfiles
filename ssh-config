@@ -30,6 +30,10 @@ Host bedrock
     Hostname 192.168.122.218
     User joel
 
-Host osumc
+Host djenome
     Hostname 54.235.244.4
+    User joel
+
+Host snp
+    Hostname 174.129.189.191
     User joel
