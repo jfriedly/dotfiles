@@ -37,3 +37,7 @@ Host djenome
 Host snp
     Hostname 174.129.189.191
     User joel
+
+Host filehost
+    Hostname 164.107.112.103
+    User friedly
