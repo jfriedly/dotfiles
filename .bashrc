@@ -1,4 +1,4 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
+# $HOME/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
@@ -65,100 +65,48 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    #alias grep='grep --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
-fi
-
-# some more ls aliases
-#alias ll='ls -l'
-#alias la='ls -A'
-#alias l='ls -CF'
-
 # Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
+# I put all my aliases into $HOME/.bash_aliases, instead of adding them here
+# directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f $HOME/.bash_aliases.sh ]; then
+    . $HOME/.bash_aliases.sh
 fi
 
-# enable programmable completion features (you don't need to enable
+# Enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# virtualenvwrapper stuff
+# Setup up virtualenvwrapper.
 if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
     export WORKON_HOME=$HOME/.virtualenvs
     export PROJECT_HOME=$HOME/git
     source /usr/local/bin/virtualenvwrapper.sh
 fi
 
-# jdk and jre stuff
-export JAVA_HOME=/usr/lib/jvm/java-6-sun
-export PATH=$PATH:$JAVA_HOME/bin
-alias csejava="/usr/lib/jvm/java-6-sun/bin/java"
-alias checkstyles="java -jar ~/Dropbox/cse-560/checkstyle-5.5/checkstyle-5.5-all.jar -c ~/Dropbox/cse-560/cse421Style.xml"
+# Setup Java stuff for CSE-560.
+#export JAVA_HOME=/usr/lib/jvm/java-6-sun
+#export PATH=$PATH:$JAVA_HOME/bin
 
-# CVS stuff
-export CVSROOT=:pserver:friedly@stdlinux.cse.ohio-state.edu:/project/c560aa03/CVSREP
+# CVS stuff for CSE-560
+#export CVSROOT=:pserver:friedly@stdlinux.cse.ohio-state.edu:/project/c560aa03/CVSREP
 
+# I like to put some executable scripts into $HOME/.bin, add these to the PATH.
 export PATH=$PATH:$HOME/.bin:./
 
+# Set the default editor to vim.
 export EDITOR=`which vim`
 
+# I occasionally use a pythonrc in my .bin folder.
 if [ -e $HOME/.bin ] && [ -e HOME/.bin/pythonrc.py ]; then
     export PYTHONSTARTUP=$HOME/.bin/pythonrc.py
 fi
 
 # I can afford the extra few KB to have a huge history :)
+# Be sure that your history doesn't contain any plain text passwords or RSA
+# keys though!
 export HISTFILESIZE=10000
-
-# Because grep should be pretty.
-alias grep="grep --color"
-
-# prints my ip address when I type myip
-alias myip="curl ifconfig.me"
-
-# dofus
-alias dofus="$HOME/ankama/Dofus/share/UpLauncher &"
-
-# terminal youtube stuff:
-alias ytsp="ytps"
-
-# hipchat
-alias hipchat="/opt/HipChat/bin/HipChat"
-
-# minecraft
-alias minecraft="java -jar $HOME/games/minecraft.jar"
-# other versions of minecraft
-alias minecraft1.3.2="unlink $HOME/.minecraft && ln -s $HOME/.minecraft1.3.2 $HOME/.minecraft && java -jar $HOME/games/minecraft.jar"
-alias minecraft1.4.2="unlink $HOME/.minecraft && ln -s $HOME/.minecraft1.4.2 $HOME/.minecraft && java -jar $HOME/games/minecraft.jar"
-alias minecraft1.4.4="unlink $HOME/.minecraft && ln -s $HOME/.minecraft1.4.4 $HOME/.minecraft && java -jar $HOME/games/minecraft.jar"
-alias minecraft1.4.5="unlink $HOME/.minecraft && ln -s $HOME/.minecraft1.4.5 $HOME/.minecraft && java -jar $HOME/games/minecraft.jar"
-alias minecraft1.4.6="unlink $HOME/.minecraft && ln -s $HOME/.minecraft1.4.6 $HOME/.minecraft && java -jar $HOME/games/minecraft.jar"
-alias minecraft1.4.7="unlink $HOME/.minecraft && ln -s $HOME/.minecraft1.4.7 $HOME/.minecraft && java -jar $HOME/games/minecraft.jar"
-
-
-# I go to my classes folder in Dropbox all the time
-alias cl="cd $HOME/Dropbox/classes/"
-
-# Cache my ssh key
-alias unlockssh="source $HOME/.bin/unlock-ssh-key.sh"
-
-# pipe stdout to this alias and it will put the stdout in a pastebin at ix.io
-alias pastebin="curl -n -F '1=<-' ix.io"
-
-# pipe stout to this alias and it will text me the info
-alias txtme="gcsms.py send"

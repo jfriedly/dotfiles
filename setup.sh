@@ -9,8 +9,9 @@ git remote add jfriedly git@github.com:jfriedly/dotfiles.git
 echo "Copying over .vimrc"
 cp .vimrc $HOME/.
 
-echo "Copying over .bashrc"
+echo "Copying over .bashrc and .bash_aliases.sh"
 cp .bashrc $HOME/.
+cp .bash_aliases.sh $HOME/.
 
 echo "Copying over .gcsms"
 cp .gcsms $HOME/.
