@@ -56,3 +56,6 @@ alias pastebin="curl --form 'f:1=<-' http://ix.io"
 # Pipe stout to this alias and it will text me the info after the command
 # completes.
 alias txtme="gcsms.py send"
+
+# Video conferencing
+alias vidyo="VidyoDesktop"
