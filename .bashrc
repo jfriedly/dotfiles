@@ -75,6 +75,7 @@ if [ -f $HOME/.bash_aliases.sh ]; then
 fi
 
 # Enable programmable completion features (you don't need to enable
+
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
@@ -110,3 +111,8 @@ fi
 # Be sure that your history doesn't contain any plain text passwords or RSA
 # keys though!
 export HISTFILESIZE=10000
+
+# I use local bashrc's occasionally
+if [ -e $HOME/.local_bashrc ]; then
+    source $HOME/.local_bashrc
+fi
