@@ -75,7 +75,6 @@ if [ -f $HOME/.bash_aliases.sh ]; then
 fi
 
 # Enable programmable completion features (you don't need to enable
-
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
@@ -96,15 +95,16 @@ fi
 # CVS stuff for CSE-560
 #export CVSROOT=:pserver:friedly@stdlinux.cse.ohio-state.edu:/project/c560aa03/CVSREP
 
-# I like to put some executable scripts into $HOME/.bin, add these to the PATH.
-export PATH=$PATH:$HOME/.bin:./
-
 # Set the default editor to vim.
 export EDITOR=`which vim`
 
-# I occasionally use a pythonrc in my .bin folder.
-if [ -e $HOME/.bin ] && [ -e HOME/.bin/pythonrc.py ]; then
-    export PYTHONSTARTUP=$HOME/.bin/pythonrc.py
+# I like to put my own binaries in $HOME/.bin
+if [ -e $HOME/.bin ]; then
+    export PATH=$HOME/.bin:$PATH
+    # I occasionally use a pythonrc in my .bin folder.
+    if [ -e $HOME/.bin/pythonrc.py ]; then
+        export PYTHONSTARTUP=$HOME/.bin/pythonrc.py
+    fi
 fi
 
 # I can afford the extra few KB to have a huge history :)
