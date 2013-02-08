@@ -29,11 +29,15 @@ au BufRead,BufNewFile *.c inoremap { {<esc>o}<esc>O
 au BufRead,BufNewFile *.cpp inoremap { {<esc>o}<esc>O
 au BufRead,BufNewFile *.js inoremap { {<esc>o}<esc>O
 
-"tell vim to use LaTeX, not some other TeX; turn on spell checker for LaTeX and ReST too
+"tell vim to use LaTeX, not some other TeX; turn on spell checker for LaTeX
+"and ReStructuredText too
 let g:tex_flavor='latex'
 au Filetype tex set spell
 au Filetype rst set spell
+"If I'm in ReST, allow easy LaTeX injection with these macros.  @a is inline
+"LaTeX and @b is regular LaTeX
 au Filetype rst nnoremap @a i:rl:`$$`<esc>hi
+au Filetype rst nnoremap @b i:rl:`\[\]`<esc>hhi
 
 "display line number and character position
 set ruler
