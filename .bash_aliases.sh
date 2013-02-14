@@ -59,3 +59,6 @@ alias txtme="gcsms.py send"
 
 # Video conferencing
 alias vidyo="VidyoDesktop"
+
+# ipython is better!
+alias python="ipython"
