@@ -1,43 +1,54 @@
 Host osc
     Hostname opensource.osu.edu
     User jfriedly
+    ForwardAgent yes
 
 Host stdlinux
     Hostname stdlinux.cse.ohio-state.edu
     User friedly
+    ForwardAgent yes
 
 Host labvm*
     Hostname %h.mview.int.nebula.com
     User joel
+    ForwardAgent yes
 
 Host nebstack*
     Hostname %h.mview.int.nebula.com
     User joel
+    ForwardAgent yes
 
 Host lab1ip
     Hostname 10.128.11.152
     User joel
+    ForwardAgent yes
 
 Host aws
     Hostname 54.243.96.60
     User joel
+    ForwardAgent yes
 
 Host vm
     Hostname 192.168.122.51
     User joel
+    ForwardAgent yes
 
 Host bedrock
     Hostname 192.168.122.218
     User joel
+    ForwardAgent yes
 
 Host djenome
     Hostname 54.235.244.4
     User joel
+    ForwardAgent yes
 
 Host snp
     Hostname 174.129.189.191
     User joel
+    ForwardAgent yes
 
 Host filehost
     Hostname 164.107.112.103
     User friedly
+    ForwardAgent yes

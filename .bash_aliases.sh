@@ -60,5 +60,8 @@ alias txtme="gcsms.py send"
 # Video conferencing
 alias vidyo="VidyoDesktop"
 
-# ipython is better!
-alias python="ipython"
+# ipython is better! (usually)
+if [[ `which ipython` ]]; then
+    alias python="ipython"
+    alias realpython="python"
+fi
