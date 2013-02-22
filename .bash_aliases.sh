@@ -65,3 +65,18 @@ if [[ `which ipython` ]]; then
     alias python="ipython"
     alias realpython="python"
 fi
+
+# git aliases!
+alias gs="git status"
+alias gf="git fetch"
+alias gfo="git fetch origin"
+alias gfj="git fetch jfriedly"
+alias gc="git commit"
+alias ga="git add"
+alias gr="git rebase"
+alias gm="git merge"
+alias gmom="git merge origin/master"
+alias gmjm="git merge jfriedly/master"
+alias gck="git checkout"
+alias gckb="git checkout -b"
+alias gp="git push"
