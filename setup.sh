@@ -13,10 +13,13 @@ echo "Copying over .bashrc and .bash_aliases.sh"
 cp .bashrc $HOME/.
 cp .bash_aliases.sh $HOME/.
 
+echo "Copying over .tmux.conf"
+cp .tmux.conf $HOME/.
+
 echo "Copying over .gcsms"
 cp .gcsms $HOME/.
 
-echo "Creating .bin, coying over unlock-ssh-keys.sh and gcsms"
+echo "Creating .bin, copying over unlock-ssh-keys.sh and gcsms"
 if [ ! -e $HOME/.bin ]
 then
     mkdir $HOME/.bin
