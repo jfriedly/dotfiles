@@ -8,7 +8,7 @@ Host stdlinux
     User friedly
     ForwardAgent yes
 
-Host labvm*
+Host labhost*
     Hostname %h.mview.int.nebula.com
     User joel
     ForwardAgent yes
