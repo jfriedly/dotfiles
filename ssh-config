@@ -26,7 +26,6 @@ Host lab1ip
 Host aws
     Hostname 54.243.96.60
     User joel
-    ForwardAgent yes
 
 Host vm
     Hostname 192.168.122.51
@@ -41,14 +40,10 @@ Host bedrock
 Host djenome
     Hostname 54.235.244.4
     User joel
-    ForwardAgent yes
 
 Host snp
     Hostname 174.129.189.191
     User joel
-    ForwardAgent yes
 
 Host filehost
     Hostname 164.107.112.103
-    User friedly
-    ForwardAgent yes
