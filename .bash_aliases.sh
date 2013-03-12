@@ -8,6 +8,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+    alias pgrep='pgrep -l'
 fi
 
 # some more ls aliases
@@ -63,7 +64,7 @@ alias vidyo="VidyoDesktop"
 # ipython is better! (usually)
 if [[ `which ipython` ]]; then
     alias python="ipython"
-    alias realpython="python"
+    alias realpython=`which python`
 fi
 
 # git aliases!
@@ -80,3 +81,9 @@ alias gmjm="git merge jfriedly/master"
 alias gck="git checkout"
 alias gckb="git checkout -b"
 alias gp="git push"
+
+# startup a simple HTTP server for the current directory on port 8080
+alias serveme="realpython -m SimpleHTTPServer 8080"
+
+# pipe json to me to pretty print it
+alias prettyprint="realpython -m json.tool"

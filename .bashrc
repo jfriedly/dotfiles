@@ -65,6 +65,9 @@ xterm*|rxvt*)
     ;;
 esac
 
+# Fix my spelling errors when using cd
+shopt -s cdspell
+
 # Alias definitions.
 # I put all my aliases into $HOME/.bash_aliases, instead of adding them here
 # directly.

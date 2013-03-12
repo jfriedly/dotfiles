@@ -9,9 +9,10 @@ git remote add jfriedly git@github.com:jfriedly/dotfiles.git
 echo "Copying over .vimrc"
 cp .vimrc $HOME/.
 
-echo "Copying over .bashrc and .bash_aliases.sh"
+echo "Copying over .bashrc, .bash_aliases.sh, and .inputrc"
 cp .bashrc $HOME/.
 cp .bash_aliases.sh $HOME/.
+cp .inputrc $HOME/.
 
 echo "Copying over .tmux.conf"
 cp .tmux.conf $HOME/.
