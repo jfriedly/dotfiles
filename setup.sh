@@ -9,6 +9,10 @@ git remote add jfriedly git@github.com:jfriedly/dotfiles.git
 echo "Copying over .vimrc"
 cp .vimrc $HOME/.
 
+echo "Copying over Vim Python syntax file"
+mkdir -p $HOME/.vim/syntax
+cp .vim/syntax/python.vim $HOME/.vim/syntax/.
+
 echo "Copying over .bashrc, .bash_aliases.sh, and .inputrc"
 cp .bashrc $HOME/.
 cp .bash_aliases.sh $HOME/.
