@@ -115,6 +115,10 @@ fi
 # keys though!
 export HISTFILESIZE=10000
 
+# TinyOS stuff for CSE 5473
+export MAKERULES=/opt/tinyos-2.1.2/support/make/Makerules
+export TOSDIR=/opt/tinyos-2.1.2/tos
+
 # I use local bashrc's occasionally
 if [ -e $HOME/.local_bashrc ]; then
     source $HOME/.local_bashrc

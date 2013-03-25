@@ -92,3 +92,9 @@ au CmdwinEnter * nnoremap <buffer> <ESC> :q<cr>
 " mark trailing spaces with this ugly character to make them hard to miss
 set list
 set listchars=trail:·
+
+"
+highlight Folded ctermbg=darkgrey ctermfg=green
+
+"load c syntax highlighting when editing nesC files (for CSE-5473 project)
+au BufRead,BufNewFile *.nc set filetype=c

@@ -62,7 +62,7 @@ alias vidyo="VidyoDesktop"
 # ipython is better! (usually)
 if [[ `which ipython` ]]; then
     alias python="ipython"
-    alias realpython=`which python`
+    alias cpython=`which python`
 fi
 
 # git aliases!
