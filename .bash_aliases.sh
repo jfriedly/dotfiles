@@ -29,7 +29,7 @@ alias dofus="$HOME/ankama/Dofus/share/UpLauncher &"
 alias ytsp="ytps"
 
 # HipChat, the XMPP-based chat client that we cyrrently use at Nebula.
-alias hipchat="/opt/HipChat/bin/HipChat"
+alias hipchatair="/opt/HipChat/bin/HipChat"
 
 # Minecraft, an amazing Java-based game.
 alias minecraft="java -jar $HOME/games/minecraft.jar"
