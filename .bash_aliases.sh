@@ -10,7 +10,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -l'
+alias ll='ls -hl'
 alias la='ls -A'
 
 # CSE-560 Java aliases.
@@ -58,12 +58,6 @@ alias txtme="gcsms.py send"
 
 # Video conferencing
 alias vidyo="VidyoDesktop"
-
-# ipython is better! (usually)
-if [[ `which ipython` ]]; then
-    alias python="ipython"
-    alias cpython=`which python`
-fi
 
 # git aliases!
 alias gs="git status"
