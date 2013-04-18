@@ -23,20 +23,23 @@ import re
 import sys
 
 
-def next_song(home):
+DEFAULT_SONGS_FILE = "{0}/git/dotfiles/lyrical_songs.txt"
+
+
+def next_song(headless_pianobar_ctl):
     """Plays the next song.
     """
     print "Song contains lyrics, skipping"
-    with open("{0}/.config/pianobar/ctl".format(home), 'w') as ctl:
+    with open(headless_pianobar_ctl, 'w') as ctl:
         ctl.write('n')
 
 
-def lyrical(songname):
+def lyrical(songname, lyrics_file):
     """Returns True if a song is on the lyrical songs list, else False.
     """
     # This makes us open and close the file pretty often, but there's no
     # other good way to ensure the file gets closed at the end.
-    with open(sys.argv[1], 'r') as lyrical_songs:
+    with open(lyrics_file, 'r') as lyrical_songs:
         print songname
         # Strip hearts and add newlines
         if songname.rstrip(' <3') + '\n' in lyrical_songs.xreadlines():
@@ -44,31 +47,37 @@ def lyrical(songname):
         return False
 
 
-def _check_args(headless_pianobar_outfile):
+def _check_args(home):
     """Checks the arguments passed to pianopy for errors.
     """
-    if not len(sys.argv) > 1 or not os.path.exists(sys.argv[1]):
+    lyrics_file = DEFAULT_SONGS_FILE.format(home)
+    if len(sys.argv) > 1:
+        lyrics_file = sys.argv[1]
+    if not os.path.exists(lyrics_file):
         print "Pianopy must be passed a file containing a list of banned songs"
         sys.exit(1)
-    if not os.path.exists(headless_pianobar_outfile):
+
+    headless_pianobar_out = "{0}/.config/pianobar/out".format(home)
+    if not os.path.exists(headless_pianobar_out):
         print ("Pianopy must be run based on a pianobar output file.  Run "
                "headless_pianobar or redirect stdout to "
                "~/.config/pianobar/out")
         sys.exit(2)
+    return lyrics_file, headless_pianobar_out
 
 
 def main():
     print "Welcome to pianopy.  Press Ctrl-C to exit."
     home = os.environ['HOME']
+    lyrics_file, headless_pianobar_out = _check_args(home)
+    headless_pianobar_ctl = "{0}/.config/pianobar/ctl".format(home)
     regex = re.compile(r'\|>  ".*')
-    headless_pianobar_outfile = "{0}/.config/pianobar/out".format(home)
-    _check_args(headless_pianobar_outfile)
 
-    with open(headless_pianobar_outfile, 'r') as outfile:
+    with open(headless_pianobar_out, 'r') as outfile:
         initial_output = outfile.read().strip()
         initial_song = regex.findall(initial_output)[-1]
-        if lyrical(initial_song):
-            next_song(home)
+        if lyrical(initial_song, lyrics_file):
+            next_song(headless_pianobar_ctl)
 
         while True:
             time.sleep(1)
@@ -76,14 +85,14 @@ def main():
             # again, but we'll still be trying to read from some later byte n.
             # This detects if the file's length is less than where we will
             # read from and seeks to byte zero if so.
-            if os.stat(headless_pianobar_outfile).st_size < outfile.tell():
+            if os.stat(headless_pianobar_out).st_size < outfile.tell():
                 outfile.seek(0)
             updated = outfile.read().strip()
             songname = regex.search(updated)
             if songname is None:
                 continue
-            elif lyrical(songname.group()):
-                next_song(home)
+            elif lyrical(songname.group(), lyrics_file):
+                next_song(headless_pianobar_ctl)
 
 
 if __name__ == "__main__":
