@@ -113,7 +113,7 @@ fi
 # I can afford the extra few KB to have a huge history :)
 # Be sure that your history doesn't contain any plain text passwords or RSA
 # keys though!
-export HISTFILESIZE=10000
+export HISTSIZE=10000
 
 # TinyOS stuff for CSE 5473
 export MAKERULES=/opt/tinyos-2.1.2/support/make/Makerules
