@@ -1,4 +1,4 @@
-# enable color support of ls and also add handy aliases
+# Enable color support of ls and also add handy aliases.
 if [ -x /usr/bin/dircolors ]; then
     test -r $HOME/.dircolors && eval "$(dircolors -b $HOME/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
@@ -9,7 +9,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias pgrep='pgrep -l'
 fi
 
-# some more ls aliases
+# Some more ls aliases.
 alias ll='ls -hl'
 alias la='ls -A'
 
@@ -56,10 +56,10 @@ alias pastebin="curl --form 'f:1=<-' http://ix.io"
 # completes.
 alias txtme="gcsms.py send"
 
-# Video conferencing
+# Video conferencing.
 alias vidyo="VidyoDesktop"
 
-# git aliases!
+# Git aliases!
 alias gs="git status"
 alias gf="git fetch"
 alias gfo="git fetch origin"
@@ -73,9 +73,13 @@ alias gmjm="git merge jfriedly/master"
 alias gck="git checkout"
 alias gckb="git checkout -b"
 alias gp="git push"
+alias gpom="git push origin master"
 
-# startup a simple HTTP server for the current directory on port 8080
+# Startup a simple HTTP server for the current directory on port 8080.
 alias serveme="realpython -m SimpleHTTPServer 8080"
 
-# pipe json to me to pretty print it
+# Pipe json to me to pretty print it.
 alias prettyprint="realpython -m json.tool"
+
+# Launching uplink from in steam makes it full screen by default.
+alias uplink="$HOME/.steam/steam/SteamApps/common/Uplink/uplink.bin.x86_64"

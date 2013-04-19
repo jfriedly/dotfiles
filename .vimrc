@@ -25,9 +25,9 @@ au Filetype python set makeprg="pep8 && pylint -E"
 
 "automatically close open tilde brackets (these ones can get annoying) except in
 "LaTeX files and Django templates
-au BufRead,BufNewFile *.c inoremap { {<esc>o}<esc>O
-au BufRead,BufNewFile *.cpp inoremap { {<esc>o}<esc>O
-au BufRead,BufNewFile *.js inoremap { {<esc>o}<esc>O
+au BufRead,BufNewFile *.c inoremap <buffer> { {<esc>o}<esc>O
+au BufRead,BufNewFile *.cpp inoremap <buffer> { {<esc>o}<esc>O
+au BufRead,BufNewFile *.js inoremap <buffer> { {<esc>o}<esc>O
 
 "tell vim to use LaTeX, not some other TeX; turn on spell checker for LaTeX
 "and ReStructuredText too
@@ -97,4 +97,8 @@ set listchars=trail:·
 highlight Folded ctermbg=darkgrey ctermfg=green
 
 "load c syntax highlighting when editing nesC files (for CSE-5473 project)
-au BufRead,BufNewFile *.nc set filetype=c
+au BufRead,BufNewFile *.nc set filetypec
+
+" have :tabf only show things in present directory, NOT /usr/include as it
+" normally is by default.  See ":help :tabf" -> ":help 'path'"
+set path=.
