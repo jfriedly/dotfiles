@@ -114,7 +114,7 @@ def cmd_auth(args, cfg):
     print("Successful. You can now use 'gcsms send' to send SMS")
 
 
-def cmd_send(cfg):
+def cmd_send(cfg, text=None):
     """Send SMS."""
 
     try:
@@ -161,7 +161,8 @@ def cmd_send(cfg):
 
     # Read the stdin and create a calendar event out of it
 
-    text = sys.stdin.read()
+    if text is None:
+        text = sys.stdin.read()
     try:
         ts = datetime.utcfromtimestamp(
             time.time() + 65).isoformat(b'T') + 'Z'
