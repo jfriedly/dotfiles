@@ -1,5 +1,5 @@
 Host osc
-    Hostname opensource.osu.edu
+    Hostname stallman.cse.ohio-state.edu
     User jfriedly
     ForwardAgent yes
 

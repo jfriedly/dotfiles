@@ -61,7 +61,7 @@ set ruler
 au BufRead,BufNewFile *.ic set filetype=c
 
 " Load C syntax highlighting when editing nesC files (for CSE-5473 project).
-au BufRead,BufNewFile *.nc set filetypec
+au BufRead,BufNewFile *.nc set filetype=c
 
 " My own escape key that isn't as far away as the actual one. Using both jk
 " and kj allows me to just jam the keyboard with the speed of one key but
