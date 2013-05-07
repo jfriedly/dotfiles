@@ -34,12 +34,13 @@ alias hipchatair="/opt/HipChat/bin/HipChat"
 # Minecraft, an amazing Java-based game.
 alias minecraft="java -jar $HOME/games/minecraft.jar"
 # Play any version of Minecraft!
-alias minecraft1.3.2="unlink $HOME/.minecraft && ln --symbolic $HOME/.minecraft1.3.2 $HOME/.minecraft && java -jar $HOME/games/minecraft.jar"
-alias minecraft1.4.2="unlink $HOME/.minecraft && ln --symbolic $HOME/.minecraft1.4.2 $HOME/.minecraft && java -jar $HOME/games/minecraft.jar"
-alias minecraft1.4.4="unlink $HOME/.minecraft && ln --symbolic $HOME/.minecraft1.4.4 $HOME/.minecraft && java -jar $HOME/games/minecraft.jar"
-alias minecraft1.4.5="unlink $HOME/.minecraft && ln --symbolic $HOME/.minecraft1.4.5 $HOME/.minecraft && java -jar $HOME/games/minecraft.jar"
-alias minecraft1.4.6="unlink $HOME/.minecraft && ln --symbolic $HOME/.minecraft1.4.6 $HOME/.minecraft && java -jar $HOME/games/minecraft.jar"
-alias minecraft1.4.7="unlink $HOME/.minecraft && ln --symbolic $HOME/.minecraft1.4.7 $HOME/.minecraft && java -jar $HOME/games/minecraft.jar"
+alias minecraft1.3.2="rm -f $HOME/.minecraft; ln --symbolic $HOME/.minecraft1.3.2 $HOME/.minecraft; java -jar $HOME/games/minecraft.jar"
+alias minecraft1.4.2="rm -f $HOME/.minecraft; ln --symbolic $HOME/.minecraft1.4.2 $HOME/.minecraft; java -jar $HOME/games/minecraft.jar"
+alias minecraft1.4.4="rm -f $HOME/.minecraft; ln --symbolic $HOME/.minecraft1.4.4 $HOME/.minecraft; java -jar $HOME/games/minecraft.jar"
+alias minecraft1.4.5="rm -f $HOME/.minecraft; ln --symbolic $HOME/.minecraft1.4.5 $HOME/.minecraft; java -jar $HOME/games/minecraft.jar"
+alias minecraft1.4.6="rm -f $HOME/.minecraft; ln --symbolic $HOME/.minecraft1.4.6 $HOME/.minecraft; java -jar $HOME/games/minecraft.jar"
+alias minecraft1.4.7="rm -f $HOME/.minecraft; ln --symbolic $HOME/.minecraft1.4.7 $HOME/.minecraft; java -jar $HOME/games/minecraft.jar"
+alias minecraft1.5.2="rm -f $HOME/.minecraft; ln --symbolic $HOME/.minecraft1.5.2 $HOME/.minecraft; java -jar $HOME/games/minecraft.jar"
 
 # I go to my classes folder in Dropbox all the time.
 alias cl="cd $HOME/Dropbox/classes/"
