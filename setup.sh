@@ -13,6 +13,7 @@ rm -f $HOME/.vimrc $HOME/.bashrc $HOME/.bash_aliases.sh $HOME/.tmux.conf $HOME/.
 rm -f $HOME/.vim/syntax/python.vim
 rm -f $HOME/.bin/unlock-ssh-key.sh $HOME/.bin/gcsms.py $HOME/.bin/pianopy.py
 rm -f $HOME/.ssh/config $HOME/.ssh/authorized_keys $HOME/.ssh/id_rsa.pub
+rm -f $HOME/.rst2pdf/styles/helvetica-titles-serif-regular
 
 echo "Linking .vimrc"
 ln --symbolic $REPO_DIR/.vimrc $HOME/.
@@ -43,3 +44,7 @@ mkdir -p $HOME/.ssh
 ln --symbolic $REPO_DIR/ssh-config $HOME/.ssh/config
 ln --symbolic $REPO_DIR/authorized_keys $HOME/.ssh/.
 ln --symbolic $REPO_DIR/id_rsa.pub $HOME/.ssh/.
+
+echo "Creating ~/.rst2pdf, linking in my stylesheets"
+mkdir -p $HOME/.rst2pdf/styles
+ln --symbolic $REPO_DIR/rst2pdf/helvetica-titles-serif-regular $HOME/.rst2pdf/styles/.
