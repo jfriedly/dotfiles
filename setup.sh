@@ -41,9 +41,9 @@ ln --symbolic $REPO_DIR/bin/pianopy.py $HOME/.bin/.
 
 echo "Configuring ssh, don't forget to copy over id_rsa"
 mkdir -p $HOME/.ssh
-ln --symbolic $REPO_DIR/ssh-config $HOME/.ssh/config
-ln --symbolic $REPO_DIR/authorized_keys $HOME/.ssh/.
-ln --symbolic $REPO_DIR/id_rsa.pub $HOME/.ssh/.
+ln --symbolic $REPO_DIR/ssh/config $HOME/.ssh/.
+ln --symbolic $REPO_DIR/ssh/authorized_keys $HOME/.ssh/.
+ln --symbolic $REPO_DIR/ssh/id_rsa.pub $HOME/.ssh/.
 
 echo "Creating ~/.rst2pdf, linking in my stylesheets"
 mkdir -p $HOME/.rst2pdf/styles
