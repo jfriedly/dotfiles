@@ -106,7 +106,7 @@ highlight Folded ctermbg=darkgrey ctermfg=green
 
 " Have :tabf only show things in present directory, NOT /usr/include as it
 " normally is by default.  See ":help :tabf" -> ":help 'path'".
-set path=.
+set path=.,,
 
 " Set the spacebar to my leader key.
 let mapleader = " "
