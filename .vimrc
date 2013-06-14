@@ -28,6 +28,8 @@ augroup python
     autocmd!
     " Automatically turn tabs into spaces in .py files.
     autocmd Filetype python retab!
+    " Make tab characters stand out
+    set list
     " Make with pep8 first, then with pylint. Pylint requires an rcfile
     " though.
     autocmd Filetype python setlocal makeprg=pep8\ %;pylint\ --reports=n\ --output-format=parseable\ --rcfile=~/.pylintrc\ %
@@ -36,7 +38,7 @@ augroup python
     autocmd Filetype python setlocal errorformat=%f:%l%m
 augroup end
 
-" Automatically close open tilde brackets (these ones can get annoying) in
+" Automatically close open squigly brackets (these ones can get annoying) in
 " C, C++, and JavaScript files.
 au BufRead,BufNewFile *.c inoremap <buffer> { {<esc>o}<esc>O
 au BufRead,BufNewFile *.cpp inoremap <buffer> { {<esc>o}<esc>O
@@ -98,7 +100,6 @@ filetype plugin on
 au CmdwinEnter * nnoremap <buffer> <ESC> :q<cr>
 
 " Mark trailing spaces with this ugly character to make them hard to miss.
-set list
 set listchars=trail:·
 
 " The default fold colors are terrible.
