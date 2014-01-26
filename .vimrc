@@ -38,14 +38,21 @@ augroup python
     autocmd Filetype python setlocal errorformat=%f:%l%m
 augroup end
 
-" Automatically close open squigly brackets (these ones can get annoying) in
-" C, C++, and JavaScript files.
-au BufRead,BufNewFile *.c inoremap <buffer> { {<esc>o}<esc>O
-au BufRead,BufNewFile *.cpp inoremap <buffer> { {<esc>o}<esc>O
-au BufRead,BufNewFile *.js inoremap <buffer> { {<esc>o}<esc>O
+" Gradle stuff (groovy)
+augroup gradle
+    " Remove all other autocmds.
+    autocmd!
+    " We seem to be using tabs for these
+    set nolist
+    set noexpandtab
+    " Set syntax highlighting to Groovy
+    setf groovy
+augroup end
 
-" Tell vim to use LaTeX, not some other TeX; turn on spell checker for LaTeX
-" and ReStructuredText too.
+
+" Tell vim to use LaTeX, not some other TeX; turn on spell checker for only
+" LaTeX and ReStructuredText.
+au Filetype * set nospell
 let g:tex_flavor='latex'
 au Filetype tex set spell
 au Filetype rst set spell
