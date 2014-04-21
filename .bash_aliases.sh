@@ -60,27 +60,11 @@ alias txtme="gcsms.py send"
 # Video conferencing.
 alias vidyo="VidyoDesktop"
 
-# Git aliases!
-alias gs="git status"
-alias gf="git fetch"
-alias gfo="git fetch origin"
-alias gfj="git fetch jfriedly"
-alias gc="git commit"
-alias ga="git add"
-alias gr="git rebase"
-alias gm="git merge"
-alias gmom="git merge origin/master"
-alias gmjm="git merge jfriedly/master"
-alias gck="git checkout"
-alias gckb="git checkout -b"
-alias gp="git push"
-alias gpom="git push origin master"
-
 # Startup a simple HTTP server for the current directory on port 8080.
-alias serveme="realpython -m SimpleHTTPServer 8080"
+alias serveme="python -m SimpleHTTPServer 8080"
 
-# Pipe json to me to pretty print it.
-alias prettyprint="realpython -m json.tool"
+# Pipe json to prettyprint to pretty print it.
+alias prettyprint="python -m json.tool"
 
 # Launching uplink from in steam makes it full screen by default.
 alias uplink="$HOME/.steam/steam/SteamApps/common/Uplink/uplink.bin.x86_64"

@@ -4,6 +4,23 @@ git config --global user.email "joelfriedly@gmail.com"
 git config --global github.user jfriedly
 git config --global core.editor vim
 git config --global color.ui auto
+
+# git aliases
+git config --global alias.s status
+git config --global alias.f fetch
+git config --global alias.fo fetch origin
+git config --global alias.c commit
+git config --global alias.a add
+git config --global alias.r rebase
+git config --global alias.m merge
+git config --global alias.mom merge origin/master
+git config --global alias.ck checkout
+git config --global alias.ckb checkout -b
+git config --global alias.p push
+git config --global alias.pom push origin master
+
+export REPO_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $REPO_DIR
 git remote add jfriedly git@github.com:jfriedly/dotfiles.git
 
 REPO_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
