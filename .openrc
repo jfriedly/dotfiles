@@ -1,0 +1,4 @@
+export OS_USERNAME=joel
+export OS_PASSWORD="cloudenvy is cool"
+export OS_TENANT_NAME=joel-Home
+export OS_AUTH_URL=https://proxy.env9.nebula.com:8770/v2.0

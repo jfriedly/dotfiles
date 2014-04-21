@@ -14,6 +14,7 @@ rm -f $HOME/.vim/syntax/python.vim
 rm -f $HOME/.bin/unlock-ssh-key.sh $HOME/.bin/gcsms.py $HOME/.bin/pianopy.py
 rm -f $HOME/.ssh/config $HOME/.ssh/authorized_keys $HOME/.ssh/id_rsa.pub
 rm -f $HOME/.rst2pdf/styles/helvetica-titles-serif-regular
+rm -f $HOME/.openrc
 
 echo "Linking .vimrc"
 ln --symbolic $REPO_DIR/.vimrc $HOME/.
@@ -26,6 +27,8 @@ ln --symbolic $REPO_DIR/.pylintrc $HOME/.
 echo "Linking .bashrc and .bash_aliases.sh"
 ln --symbolic $REPO_DIR/.bashrc $HOME/.
 ln --symbolic $REPO_DIR/.bash_aliases.sh $HOME/.
+source $HOME/.bashrc
+source $HOME/.bash_aliases
 
 echo "Linking .tmux.conf"
 ln --symbolic $REPO_DIR/.tmux.conf $HOME/.
@@ -48,3 +51,7 @@ ln --symbolic $REPO_DIR/ssh/id_rsa.pub $HOME/.ssh/.
 echo "Creating ~/.rst2pdf, linking in my stylesheets"
 mkdir -p $HOME/.rst2pdf/styles
 ln --symbolic $REPO_DIR/rst2pdf/helvetica-titles-serif-regular $HOME/.rst2pdf/styles/.
+
+echo "Creating ~/.openrc, sourcing it"
+ln --symbolic $REPO_DIR/.openrc $HOME/.
+source $HOME/.openrc

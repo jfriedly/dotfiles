@@ -119,6 +119,34 @@ export HISTSIZE=10000
 export MAKERULES=/opt/tinyos-2.1.2/support/make/Makerules
 export TOSDIR=/opt/tinyos-2.1.2/tos
 
+# Vim-style marks for bash
+export MARKPATH=$HOME/.marks
+function jump { 
+        cd -P $MARKPATH/$1 2>/dev/null || echo "No such mark: $1"
+}
+function mark { 
+        mkdir -p $MARKPATH; ln -s $(pwd) $MARKPATH/$1
+}
+function unmark { 
+        rm -if $MARKPATH/$1 
+}
+function marks {
+        ls -l $MARKPATH | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
+}
+_completemarks() {
+    local curw=${COMP_WORDS[COMP_CWORD]}
+    local wordlist=$(find $MARKPATH -type l -printf "%f\n")
+    COMPREPLY=($(compgen -W '${wordlist[@]}' -- "$curw"))
+    return 0
+}
+
+                                  complete -F _completemarks jump unmark
+
+# OpenStack credentials are stored in $HOME/.openrc
+if [ -e $HOME/.openrc ]; then
+    source $HOME/.openrc
+fi
+
 # I use local bashrc's occasionally
 if [ -e $HOME/.local_bashrc ]; then
     source $HOME/.local_bashrc
