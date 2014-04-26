@@ -66,8 +66,10 @@ ln --symbolic $REPO_DIR/ssh/authorized_keys $HOME/.ssh/.
 ln --symbolic $REPO_DIR/ssh/id_rsa.pub $HOME/.ssh/.
 
 echo "Creating ~/.rst2pdf, linking in my stylesheets"
+# use these by passing -s /path/to/stylesheet to rst2pdf
 mkdir -p $HOME/.rst2pdf/styles
 ln --symbolic $REPO_DIR/rst2pdf/helvetica-titles-serif-regular $HOME/.rst2pdf/styles/.
+ln --symbolic $HOME/git/dotfiles/rst2pdf/marginless $HOME/.rst2pdf/styles/.
 
 echo "Creating ~/.openrc, sourcing it"
 ln --symbolic $REPO_DIR/.openrc $HOME/.
