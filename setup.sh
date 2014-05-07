@@ -31,6 +31,7 @@ rm -f $HOME/.vim/syntax/python.vim
 rm -f $HOME/.bin/unlock-ssh-key.sh $HOME/.bin/gcsms.py $HOME/.bin/pianopy.py
 rm -f $HOME/.ssh/config $HOME/.ssh/authorized_keys $HOME/.ssh/id_rsa.pub
 rm -f $HOME/.rst2pdf/styles/helvetica-titles-serif-regular
+rm -f $HOME/.rst2pdf/styles/marginless
 rm -f $HOME/.openrc
 
 echo "Linking .vimrc"
@@ -45,7 +46,7 @@ echo "Linking .bashrc and .bash_aliases.sh"
 ln --symbolic $REPO_DIR/.bashrc $HOME/.
 ln --symbolic $REPO_DIR/.bash_aliases.sh $HOME/.
 source $HOME/.bashrc
-source $HOME/.bash_aliases
+source $HOME/.bash_aliases.sh
 
 echo "Linking .tmux.conf"
 ln --symbolic $REPO_DIR/.tmux.conf $HOME/.
