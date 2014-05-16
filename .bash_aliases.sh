@@ -68,3 +68,6 @@ alias prettyprint="python -m json.tool"
 
 # Launching uplink from in steam makes it full screen by default.
 alias uplink="$HOME/.steam/steam/SteamApps/common/Uplink/uplink.bin.x86_64"
+
+# Launch EVE Online
+alias eve='env WINEPREFIX="/home/joel/.wine" wine C:\\Program\ Files\ \(x86\)\\CCP\\EVE\\eve.exe'
