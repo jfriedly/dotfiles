@@ -16,7 +16,6 @@ git config --global alias.m merge
 git config --global alias.mom "merge origin/master"
 git config --global alias.ck checkout
 git config --global alias.ckb "checkout -b"
-git config --global alias.p push
 git config --global alias.pom "push origin master"
 
 export REPO_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
