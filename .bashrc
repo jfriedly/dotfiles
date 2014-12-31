@@ -114,6 +114,12 @@ fi
 # Be sure that your history doesn't contain any plain text passwords or RSA
 # keys though!
 export HISTSIZE=10000
+export HISTFILESIZE=400000000
+
+# Whenever a new prompt is opened, configure it to immediately write all
+# history lines.
+PROMPT_COMMAND="history -a"
+export HISTSIZE PROMPT_COMMAND
 
 # TinyOS stuff for CSE 5473
 export MAKERULES=/opt/tinyos-2.1.2/support/make/Makerules
