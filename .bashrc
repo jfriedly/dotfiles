@@ -148,6 +148,11 @@ _completemarks() {
 
                                   complete -F _completemarks jump unmark
 
+# Give Macs colored terminal output for ls
+if [ `uname -s` = "Darwin" ]; then
+    alias ls="ls -G"
+fi
+
 # OpenStack credentials are stored in $HOME/.openrc
 if [ -e $HOME/.openrc ]; then
     source $HOME/.openrc
