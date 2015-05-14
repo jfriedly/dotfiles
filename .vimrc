@@ -118,3 +118,8 @@ set path=.,,
 
 " Set the spacebar to my leader key.
 let mapleader = " "
+
+" Do not highlight words that Vim thinks should be capitalized.  In my
+" experience, it's usually wrong, and it can look terrible on transparent
+" terminal backgrounds
+highlight clear spellcap
