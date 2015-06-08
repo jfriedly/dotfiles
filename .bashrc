@@ -158,6 +158,10 @@ if [ -e $HOME/.openrc ]; then
     source $HOME/.openrc
 fi
 
+if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
+	source /usr/local/bin/virtualenvwrapper.sh
+fi
+
 # I use local bashrc's occasionally
 if [ -e $HOME/.local_bashrc ]; then
     source $HOME/.local_bashrc
