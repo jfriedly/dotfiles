@@ -88,6 +88,7 @@ fi
 if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
     export WORKON_HOME=$HOME/.virtualenvs
     export PROJECT_HOME=$HOME/git
+    export VIRTUALENVWRAPPER_WORKON_CD=0
     source /usr/local/bin/virtualenvwrapper.sh
 fi
 
@@ -156,10 +157,6 @@ fi
 # OpenStack credentials are stored in $HOME/.openrc
 if [ -e $HOME/.openrc ]; then
     source $HOME/.openrc
-fi
-
-if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
-	source /usr/local/bin/virtualenvwrapper.sh
 fi
 
 # I use local bashrc's occasionally
