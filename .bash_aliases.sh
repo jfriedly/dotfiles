@@ -56,6 +56,7 @@ alias pastebin="curl --form 'f:1=<-' http://ix.io"
 # Pipe stout to this alias and it will text me the info after the command
 # completes.
 alias txtme="gcsms.py send"
+alias let_me_know="echo \"`cat /etc/hostname` done\" | txtme"
 
 # Video conferencing.
 alias vidyo="VidyoDesktop"
