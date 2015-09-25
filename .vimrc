@@ -29,7 +29,7 @@ augroup python
     " Automatically turn tabs into spaces in .py files.
     autocmd Filetype python retab!
     " Make tab characters stand out
-    set list
+    autocmd Filetype python setlocal list
     " Make with pep8 first, then with pylint. Pylint requires an rcfile
     " though.
     autocmd Filetype python setlocal makeprg=pep8\ %;pylint\ --reports=n\ --output-format=parseable\ --rcfile=~/.pylintrc\ %
@@ -42,11 +42,11 @@ augroup end
 augroup gradle
     " Remove all other autocmds.
     autocmd!
-    " We seem to be using tabs for these
-    set nolist
-    set noexpandtab
     " Set syntax highlighting to Groovy
-    setf groovy
+    autocmd BufRead,BufNewFile *.gradle set filetype=groovy
+    " We seem to be using tabs for these
+    autocmd Filetype groovy setlocal nolist
+    autocmd Filetype groovy setlocal noexpandtab
 augroup end
 
 
