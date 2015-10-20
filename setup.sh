@@ -1,28 +1,5 @@
-echo "Configuring git"
-git config --global user.name "Joel Friedly"
-git config --global user.email "joelfriedly@gmail.com"
-git config --global github.user jfriedly
-git config --global core.editor vim
-git config --global color.ui auto
-
-# git aliases
-git config --global alias.s status
-git config --global alias.f fetch
-git config --global alias.fo "fetch origin"
-git config --global alias.c commit
-git config --global alias.a add
-git config --global alias.r rebase
-git config --global alias.m merge
-git config --global alias.mom "merge origin/master"
-git config --global alias.ck checkout
-git config --global alias.ckb "checkout -b"
-git config --global alias.pom "push origin master"
-
+ 
 export REPO_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-cd $REPO_DIR
-git remote add jfriedly git@github.com:jfriedly/dotfiles.git
-
-REPO_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 echo "Removing old dotfiles"
 rm -f $HOME/.vimrc $HOME/.bashrc $HOME/.bash_aliases.sh $HOME/.tmux.conf $HOME/.gcsms $HOME/.pylintrc
@@ -32,6 +9,12 @@ rm -f $HOME/.ssh/config $HOME/.ssh/authorized_keys $HOME/.ssh/id_rsa.pub
 rm -f $HOME/.rst2pdf/styles/helvetica-titles-serif-regular
 rm -f $HOME/.rst2pdf/styles/marginless
 rm -f $HOME/.openrc
+rm -f $HOME/.gitconfig
+
+echo "Configuring git"
+cd $REPO_DIR
+git remote add jfriedly git@github.com:jfriedly/dotfiles.git
+ln -s $REPO_DIR/.gitconfig $HOME/.
 
 echo "Linking .vimrc"
 ln -s $REPO_DIR/.vimrc $HOME/.
@@ -74,3 +57,4 @@ ln -s $HOME/git/dotfiles/rst2pdf/marginless $HOME/.rst2pdf/styles/.
 echo "Creating ~/.openrc, sourcing it"
 ln -s $REPO_DIR/.openrc $HOME/.
 source $HOME/.openrc
+

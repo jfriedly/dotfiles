@@ -1,0 +1,23 @@
+[user]
+	name = Joel Friedly
+	email = joelfriedly@gmail.com
+[github]
+	user = jfriedly
+[core]
+	editor = vim
+[color]
+	ui = auto
+[alias]
+	s = status
+	f = fetch
+	fo = fetch origin
+	c = commit
+	a = add
+	r = rebase
+	m = merge
+	mom = merge origin/master
+	ck = checkout
+	ckb = checkout -b
+	pom = push origin master
+[grep]
+    linenumber = true
