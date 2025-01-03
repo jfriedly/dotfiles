@@ -154,6 +154,11 @@ if [ -e $HOME/.openrc ]; then
     source $HOME/.openrc
 fi
 
+# Cargo is Rust's package manager
+if [ -d $HOME/.cargo ]; then
+    source "$HOME/.cargo/env"
+fi
+
 # I use local bashrc's occasionally
 if [ -e $HOME/.local_bashrc ]; then
     source $HOME/.local_bashrc
