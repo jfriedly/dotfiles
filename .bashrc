@@ -158,14 +158,14 @@ _completemarks() {
 
                                   complete -F _completemarks jump unmark
 
-# Give Macs colored terminal output for ls
-if [ `uname -s` = "Darwin" ]; then
-    alias ls="ls -G"
-fi
-
 # OpenStack credentials are stored in $HOME/.openrc
 if [ -e $HOME/.openrc ]; then
     source $HOME/.openrc
+fi
+
+# Cargo is Rust's package manager
+if [ -d $HOME/.cargo ]; then
+    source "$HOME/.cargo/env"
 fi
 
 # I use local bashrc's occasionally

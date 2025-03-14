@@ -10,6 +10,7 @@ rm -f $HOME/.rst2pdf/styles/helvetica-titles-serif-regular
 rm -f $HOME/.rst2pdf/styles/marginless
 rm -f $HOME/.openrc
 rm -f $HOME/.gitconfig
+rm -f $HOME/.zshrc
 
 echo "Configuring git"
 cd $REPO_DIR
@@ -35,6 +36,9 @@ ln -s $REPO_DIR/.tmux.conf $HOME/.
 
 echo "Linking .gcsms"
 ln -s $REPO_DIR/.gcsms $HOME/.
+
+echo "Linking .zshrc"
+ln -s $REPO_DIR/.zshrc $HOME/.
 
 echo "Creating .bin, linking unlock-ssh-keys.sh and gcsms"
 mkdir -p $HOME/.bin

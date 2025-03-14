@@ -1,6 +1,8 @@
 # Enable color support of ls and also add handy aliases.
-if [ -x /usr/bin/dircolors ]; then
-    test -r $HOME/.dircolors && eval "$(dircolors -b $HOME/.dircolors)" || eval "$(dircolors -b)"
+if [ -x /usr/bin/dircolors ] || [ $(uname) = "Darwin" ]; then
+    if [ -x /usr/bin/dircolors ]; then
+        test -r $HOME/.dircolors && eval "$(dircolors -b $HOME/.dircolors)" || eval "$(dircolors -b)"
+    fi
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
@@ -72,3 +74,11 @@ alias uplink="$HOME/.steam/steam/SteamApps/common/Uplink/uplink.bin.x86_64"
 
 # Launch EVE Online
 alias eve='env WINEPREFIX="/home/joel/.wine" wine C:\\Program\ Files\ \(x86\)\\CCP\\EVE\\eve.exe'
+
+# MacBook Pro power coming in from the adapter and being delivered to the system (not the battery), in watts. Updated every ~1 minute.
+# Source: https://apple.stackexchange.com/questions/415355/is-it-possible-to-detect-the-current-power-input-on-a-macbook
+if [ $(uname) = "Darwin" ]; then
+    alias mbp_adapter_power='ioreg -rw0 -a -c AppleSmartBattery | plutil -extract "0.BatteryData.AdapterPower" raw - | xargs -I % lldb --batch -o "print/f %" | grep "int).*[0-9]*" | cut -c 12-'
+    # This one isn't (currently) very useful to me, so I'm commenting it out for faster terminal completion.
+    # alias mbp_system_power='ioreg -rw0 -a -c AppleSmartBattery | plutil -extract "0.BatteryData.SystemPower" raw - | xargs -I % lldb --batch -o "print/f %" | grep "int).*[0-9]*" | cut -c 12-'
+fi
