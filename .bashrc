@@ -14,7 +14,16 @@ HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+# I can afford the extra few KB to have a huge history :)
+# Be sure that your history doesn't contain any plain text passwords or RSA
+# keys though!
+export HISTSIZE=10000
+export HISTFILESIZE=400000000
+
+# Whenever a new prompt is opened, configure it to immediately write all
+# history lines.
+PROMPT_COMMAND="history -a"
+export HISTSIZE PROMPT_COMMAND
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
